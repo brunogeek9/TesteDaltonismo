@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final int TESTE1 = 11,TESTE2 = 22, TESTE3 = 33,CONF = 44, CANC = 55;
@@ -29,7 +30,23 @@ public class MainActivity extends AppCompatActivity {
         sendToTeste(33,3);
     }
     public void cliqueVerificar(View v){
-
+        TextView tvr = findViewById(R.id.tv_res);
+        TextView r1 = findViewById(R.id.tv_r1);
+        TextView r2 = findViewById(R.id.tv_r2);
+        TextView r3 = findViewById(R.id.tv_r3);
+        int res1 = Integer.parseInt(r1.getText().toString());
+        int res2 = Integer.parseInt(r2.getText().toString());
+        int res3 = Integer.parseInt(r3.getText().toString());
+        if(res1 == 0 || res2==0 || res3==0){
+            Toast toast = Toast.makeText(getApplicationContext(), "Por favor, complete o teste", Toast.LENGTH_SHORT);
+            toast.show();
+        }else{
+            if(res2 == 29 && res3 == 74 && res1==8){
+                tvr.setText("Normal");
+            }else{
+                tvr.setText("Procurar um médico");
+            }
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
