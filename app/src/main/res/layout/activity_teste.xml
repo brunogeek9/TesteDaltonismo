@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/teste1" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_res"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -53,10 +53,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="cliqueOk"
         android:text="Ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editText"
+        app:layout_constraintStart_toEndOf="@+id/et_res"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
@@ -67,10 +68,11 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:onClick="cliqueCanc"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/et_res" />
 
 </android.support.constraint.ConstraintLayout>

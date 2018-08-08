@@ -9,8 +9,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     public static final int TESTE1 = 11,TESTE2 = 22, TESTE3 = 33,CONF = 44, CANC = 55;
-    public void sendToTeste(int n){
+    public void sendToTeste(int n,int idImage){
         Intent i = new Intent(this,TesteActivity.class);
+        i.putExtra("idImage", idImage) ;
         startActivityForResult(i,n);
     }
     @Override
@@ -19,15 +20,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void openTeste1(View v){
-        sendToTeste(11);
+        sendToTeste(11,1);
     }
     public void openTeste2(View v){
-        sendToTeste(22);
+        sendToTeste(22,2);
     }
     public void openTeste3(View v){
-        sendToTeste(33);
+        sendToTeste(33,3);
     }
+    public void cliqueVerificar(View v){
 
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
